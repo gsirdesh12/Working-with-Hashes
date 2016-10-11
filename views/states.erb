@@ -1,0 +1,17 @@
+<h1>State List</h1>
+
+<p>here is a list of states...</p>
+
+<!-- iterate through each state in the array and put them into list items individually -->
+
+<form>
+  <select>
+    <% @states.each do | state | %>
+      <% if state[:id] == "PA" %>
+          <option value="<% state[:id] %>" selected><%= state[:name] %></option>
+      <% else %>
+          <option value="<% state[:id] %>"><%= state[:name] %></option>
+      <% end %>
+    <% end %>
+  </select>
+</form>
