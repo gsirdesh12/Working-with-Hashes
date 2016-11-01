@@ -8,14 +8,21 @@ get '/' do
 end
 
 get '/states' do
-  @states = Array.new
-  state = {:id => "PA", :name => "Pennsylvania"}
-  state2 = {:id => "CA", :name => "California"}
-  state3 = {:id => "TX", :name => "Texas"}
-  state4 = {:id => "IN", :name => "Indiana"}
-  state5 = {:id => "NJ", :name => "New Jersey"}
+  # you can do it this way but an easier way which you will see in ruby code is:
 
-  @states.push(state, state2, state3, state4, state5)
+  @states = []
+  @states << {:id => "PA", :name => "Pennsylvania"}
+  @states << {:id => "CA", :name => "California"}
+  @states << {:id => "TX", :name => "Texas"}
+  @states << {:id => "IN", :name => "Indiana"}
+  @states << {:id => "NJ", :name => "New Jersey"}
+  # @states = Array.new
+  # state = {:id => "PA", :name => "Pennsylvania"}
+  # state2 = {:id => "CA", :name => "California"}
+  # state3 = {:id => "TX", :name => "Texas"}
+  # state4 = {:id => "IN", :name => "Indiana"}
+  # state5 = {:id => "NJ", :name => "New Jersey"}
+  #@states.push(state, state2, state3, state4, state5)
 
   @states.sort_by! do | state |
     state[:name]

@@ -3,15 +3,11 @@
 <p>here is a list of states...</p>
 
 <!-- iterate through each state in the array and put them into list items individually -->
-
+<%# jarp: this works but it's too much repetition. add an if block inline %>
 <form>
   <select>
     <% @states.each do | state | %>
-      <% if state[:id] == "PA" %>
-          <option value="<% state[:id] %>" selected><%= state[:name] %></option>
-      <% else %>
-          <option value="<% state[:id] %>"><%= state[:name] %></option>
-      <% end %>
+      <option value="<% state[:id] %>" <% if state[:id] == "PA" %> selected <% end %>><%= state[:name] %></option>
     <% end %>
   </select>
 </form>
